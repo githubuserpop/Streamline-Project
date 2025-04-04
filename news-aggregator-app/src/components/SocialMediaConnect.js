@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-// UC3: Link Social Media Account
 function SocialMediaConnect() {
   const [socialAccounts, setSocialAccounts] = useState([
     { id: 'twitter', name: 'Twitter', connected: false, icon: 'twitter', username: '' },
@@ -11,20 +10,15 @@ function SocialMediaConnect() {
   
   const [loading, setLoading] = useState({});
   const [error, setError] = useState({});
-  
+
   const handleConnect = (accountId) => {
-    // Set loading state for this specific account
     setLoading(prev => ({ ...prev, [accountId]: true }));
     setError(prev => ({ ...prev, [accountId]: null }));
     
-    // Simulate OAuth flow
     console.log(`Connecting to ${accountId}...`);
     
-    // In a real app, this would open a popup window for OAuth authentication
-    // For demo, we'll simulate success after a delay
     setTimeout(() => {
       try {
-        // Simulate successful connection (normally this would be a callback from OAuth)
         setSocialAccounts(accounts => 
           accounts.map(account => 
             account.id === accountId 
@@ -45,7 +39,6 @@ function SocialMediaConnect() {
         
         setLoading(prev => ({ ...prev, [accountId]: false }));
       } catch (err) {
-        // Handle error
         setError(prev => ({ 
           ...prev, 
           [accountId]: 'Failed to connect. Please try again.' 
@@ -56,13 +49,10 @@ function SocialMediaConnect() {
   };
   
   const handleDisconnect = (accountId) => {
-    // Set loading state
     setLoading(prev => ({ ...prev, [accountId]: true }));
     
-    // In a real app, this would call an API to revoke OAuth access
     console.log(`Disconnecting from ${accountId}...`);
     
-    // Simulate API call
     setTimeout(() => {
       setSocialAccounts(accounts => 
         accounts.map(account => 
@@ -75,8 +65,7 @@ function SocialMediaConnect() {
       setLoading(prev => ({ ...prev, [accountId]: false }));
     }, 800);
   };
-  
-  // Benefits explanations for social media connections
+
   const benefitsByPlatform = {
     twitter: 'Share articles directly to Twitter, follow news sources, and get personalized content based on your Twitter interests.',
     facebook: 'Share your favorite articles with friends, log in with your Facebook account, and get news recommendations from your network.',

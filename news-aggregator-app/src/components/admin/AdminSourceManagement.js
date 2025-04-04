@@ -13,10 +13,8 @@ function AdminSourceManagement() {
   const [formErrors, setFormErrors] = useState({});
 
   useEffect(() => {
-    // Fetch news sources - in a real app, this would be an API call
     const fetchSources = async () => {
       try {
-        // Mock data
         const mockSources = [
           { id: 1, name: 'Tech News Daily', url: 'https://technews.com/rss', category: 'Technology', refreshInterval: 30, status: 'active' },
           { id: 2, name: 'World Reports', url: 'https://worldreports.com/feed', category: 'Politics', refreshInterval: 60, status: 'active' },
@@ -38,11 +36,9 @@ function AdminSourceManagement() {
     fetchSources();
   }, []);
   
-  // UC_A22: Manage News Sources (Add)
   const handleAddSource = (e) => {
     e.preventDefault();
     
-    // Validate form
     const errors = {};
     if (!newSource.name.trim()) errors.name = 'Name is required';
     if (!newSource.url.trim()) errors.url = 'URL is required';
@@ -54,7 +50,6 @@ function AdminSourceManagement() {
       return;
     }
     
-    // Add the new source
     const newId = Math.max(...sources.map(s => s.id), 0) + 1;
     const sourceToAdd = {
       id: newId,
@@ -73,7 +68,6 @@ function AdminSourceManagement() {
     setFormErrors({});
   };
   
-  // UC_A22: Manage News Sources (Remove)
   const handleDeleteSource = (sourceId) => {
     if (window.confirm('Are you sure you want to remove this news source? This action cannot be undone.')) {
       setSources(sources.filter(source => source.id !== sourceId));
@@ -94,7 +88,6 @@ function AdminSourceManagement() {
       [name]: value
     }));
     
-    // Clear error when user starts typing
     if (formErrors[name]) {
       setFormErrors(prev => ({
         ...prev,

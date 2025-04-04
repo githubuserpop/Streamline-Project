@@ -22,12 +22,9 @@ function NewsFeed() {
 
   const handleRefreshNews = () => {
     setIsRefreshing(true);
-    
-    // Simulate API call
     setTimeout(() => {
       setIsRefreshing(false);
     }, 1500);
-    
     return Promise.resolve();
   };
 

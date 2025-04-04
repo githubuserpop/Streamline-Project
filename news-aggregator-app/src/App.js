@@ -7,7 +7,7 @@ import RegisterPage from './pages/RegisterPage';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import './App.css';
 
-// Mock data for the landing page
+// Mock data
 const mockBreakingNews = [
   { id: 1, title: 'Global markets respond to economic changes', url: '#' },
   { id: 2, title: 'New tech regulations announced by government', url: '#' },
@@ -70,7 +70,6 @@ const mockTrending = [
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
-    // Check for saved preference
     const saved = localStorage.getItem('darkMode');
     return saved ? JSON.parse(saved) : false;
   });
@@ -78,10 +77,7 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    // Save preference to localStorage
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
-    
-    // Update theme
     if (darkMode) {
       document.documentElement.setAttribute('data-theme', 'dark');
     } else {
@@ -89,12 +85,10 @@ function App() {
     }
   }, [darkMode]);
 
-  // Check if we're on the home page
   const isHomePage = location.pathname === '/';
 
   return (
     <div className="App">
-      {/* Navigation Bar */}
       <nav className="app-bar">
         <div className="app-bar-content">
           <div className="app-menu">
@@ -107,7 +101,6 @@ function App() {
             </button>
             <Link to="/" className="app-title">Streamline</Link>
           </div>
-          
           <div className="app-nav">
             <Link to="/" className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
             <Link to="/world" className={`nav-item ${location.pathname === '/world' ? 'active' : ''}`}>World</Link>
@@ -116,7 +109,6 @@ function App() {
             <Link to="/health" className={`nav-item ${location.pathname === '/health' ? 'active' : ''}`}>Health</Link>
             <Link to="/sports" className={`nav-item ${location.pathname === '/sports' ? 'active' : ''}`}>Sports</Link>
           </div>
-          
           <div className="app-actions">
             <button 
               className="search-button"
@@ -135,8 +127,6 @@ function App() {
           </div>
         </div>
       </nav>
-      
-      {/* Breaking News Ticker */}
       {isHomePage && (
         <div className="breaking-news-ticker">
           <div className="ticker-content">
@@ -151,14 +141,11 @@ function App() {
           </div>
         </div>
       )}
-
-      {/* Main content */}
       <main>
         <Routes>
           <Route path="/" element={
             <div className="news-container">
               <div className="main-content">
-                {/* Hero Article */}
                 <div className="hero-section">
                   <img src={mockFeaturedArticle.imageUrl} alt={mockFeaturedArticle.title} className="hero-image" />
                   <div className="hero-content">
@@ -172,8 +159,6 @@ function App() {
                     </div>
                   </div>
                 </div>
-                
-                {/* Latest News Section */}
                 <div>
                   <h2 className="section-title">Latest News</h2>
                   <div className="news-grid">
@@ -199,17 +184,12 @@ function App() {
                     ))}
                   </div>
                 </div>
-                
-                {/* NewsFeed Component - This includes your existing functionality */}
                 <div>
                   <h2 className="section-title">Personalized For You</h2>
                   <NewsFeed />
                 </div>
               </div>
-              
-              {/* Sidebar */}
               <div className="sidebar">
-                {/* Trending Section */}
                 <div className="sidebar-section">
                   <div className="sidebar-header">Trending Now</div>
                   <div className="sidebar-content">
@@ -223,8 +203,6 @@ function App() {
                     </div>
                   </div>
                 </div>
-                
-                {/* Additional sidebar content can go here */}
                 <div className="sidebar-section">
                   <div className="sidebar-header">Editor's Picks</div>
                   <div className="sidebar-content">
@@ -239,8 +217,6 @@ function App() {
           <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
       </main>
-
-      {/* Footer */}
       <footer className="app-footer">
         <div className="container">
           <p>&copy; {new Date().getFullYear()} Streamline. All rights reserved.</p>

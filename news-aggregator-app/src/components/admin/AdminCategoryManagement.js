@@ -11,7 +11,7 @@ function AdminCategoryManagement() {
   });
   const [formErrors, setFormErrors] = useState({});
 
-  // Available icons for categories
+  // Available icons
   const availableIcons = [
     'newspaper', 'globe', 'laptop-code', 'chart-line', 
     'basketball-ball', 'heartbeat', 'film', 'university', 
@@ -19,10 +19,9 @@ function AdminCategoryManagement() {
   ];
 
   useEffect(() => {
-    // Fetch categories - in a real app, this would be an API call
+    // Mock data fetch
     const fetchCategories = async () => {
       try {
-        // Mock data
         const mockCategories = [
           { id: 1, name: 'Technology', description: 'Tech news and updates', icon: 'laptop-code', status: 'active', articleCount: 243 },
           { id: 2, name: 'Politics', description: 'Political news and events', icon: 'university', status: 'active', articleCount: 189 },
