@@ -43,12 +43,12 @@ function TrendingNews() {
           </button>
         </div>
       </div>
-      
+
       <div className="breaking-news-alert">
         <span className="alert-label">BREAKING:</span>
         <span className="alert-text">Latest breaking news headline appears here</span>
       </div>
-      
+
       <div className="articles-grid">
         {mockTrendingArticles.map(article => (
           <NewsArticle key={article.id} article={article} />
