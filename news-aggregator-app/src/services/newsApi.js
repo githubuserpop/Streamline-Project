@@ -1,4 +1,4 @@
-const API_KEY = '7ce7c6e29ec54f9a890596e4601ecdf1'; 
+const API_KEY = '7ce7c6e29ec54f9a890596e4601ecdf1'; //API key for NewsAPI //Potentially explore other APIs, this is the key location.
 const BASE_URL = 'https://newsapi.org/v2';
 
 /**
