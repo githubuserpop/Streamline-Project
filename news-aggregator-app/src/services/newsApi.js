@@ -1,4 +1,4 @@
-const API_KEY = '7ce7c6e29ec54f9a890596e4601ecdf1'; // Replace with your actual API key
+const API_KEY = '7ce7c6e29ec54f9a890596e4601ecdf1'; 
 const BASE_URL = 'https://newsapi.org/v2';
 
 /**
