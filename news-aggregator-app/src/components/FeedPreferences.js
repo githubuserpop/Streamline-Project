@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+//Implement buttons and checkboxes for user preferences
 // UC4: Adjust Personalized News Feed
 // UC15: Manage Feed Topics
 function FeedPreferences({ onSave }) {

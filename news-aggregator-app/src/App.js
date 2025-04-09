@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { FiMoon, FiSun, FiSearch, FiMenu } from 'react-icons/fi';
-import NewsFeed from './components/NewsFeed';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import AdminDashboard from './pages/admin/AdminDashboard';
+import NewsFeed from './components/NewsFeed'; //Imports the NewsFeed component
+import LoginPage from './pages/LoginPage'; //Static Login page #Future implementation of our database necessary
+import RegisterPage from './pages/RegisterPage'; //Static Registration page #Future implementation of our database necessary
+import AdminDashboard from './pages/admin/AdminDashboard'; //Administration dashboard 
 import CategoryPage from './pages/CategoryPage'; // Imports the CategoryPage component
-import { useNews } from './hooks/useNews';
+import { useNews } from './hooks/useNews'; //Imports the custom hook for fetching news
 import './App.css';
 
 function App() {

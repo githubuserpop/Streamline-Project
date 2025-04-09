@@ -3,6 +3,11 @@ import NewsArticle from './NewsArticle';
 
 function PersonalizedNews() {
   // Mock data - in a real app, this would come from an API based on user preferences
+  //Integration with a backend service would be necessary to fetch personalized articles
+  // based on user preferences, which could be stored in a database or user profile.
+  // Tranpsort this componenet into a seprate page as a personalized news feed
+  // and add a button to the main page to navigate to this personalized news feed.
+  
   const mockPersonalizedArticles = [
     {
       id: 1,

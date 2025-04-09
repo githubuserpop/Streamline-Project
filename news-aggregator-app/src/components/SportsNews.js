@@ -5,6 +5,9 @@ function SportsNews() {
   const [activeTab, setActiveTab] = useState('articles');
 
   // Mock data - in a real app, this would come from a sports data API
+  // Make this section dynamic by fetching data from a sports API
+  // and displaying the latest sports news, live scores, and standings.
+  
   const mockSportsArticles = [
     {
       id: 1,
