@@ -45,6 +45,14 @@ function NewsFeed() {
     >
       <div className="news-feed-header">
         <div className="news-feed-controls">
+        <motion.button 
+            className={`section-button ${activeSection === 'yournews' ? 'active' : ''}`}
+            onClick={() => setActiveSection('yournews')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Your News
+          </motion.button>
           <motion.button 
             className={`section-button ${activeSection === 'trending' ? 'active' : ''}`}
             onClick={() => setActiveSection('trending')}
@@ -140,6 +148,13 @@ function NewsFeed() {
             <SportsNews 
               layout={layout} 
               isRefreshing={isRefreshing}
+            />
+          )}
+          {activeSection === 'yournews' && (
+            <PersonalizedNews 
+              layout={layout} 
+              isRefreshing={isRefreshing}
+              categoryFilters={categories.filter(c => c.active).map(c => c.id)}
             />
           )}
         </motion.div>
