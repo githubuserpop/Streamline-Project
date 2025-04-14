@@ -136,7 +136,13 @@ function App() {
                   <h2 className="section-title">Latest News</h2>
                   <div className="news-grid">
                     {articles.map((article, index) => (
-                      <div key={index} className="news-card">
+                      <a 
+                        key={index} 
+                        href={article.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="news-card"
+                      >
                         <img 
                           src={article.urlToImage || 'https://via.placeholder.com/400x200?text=News+Image'} 
                           alt={article.title} 
@@ -155,7 +161,7 @@ function App() {
                             </span>
                           </div>
                         </div>
-                      </div>
+                      </a>
                     ))}
                   </div>
                 </div>
