@@ -2,6 +2,9 @@
 
 A personalized news aggregator that allows users to view news about relevant topics and create a customized news section that filters and displays only the topics they're interested in.
 
+https://streamline-news-aggregator.windsurf.build/
+* Note: The deployed version does not work fully as the api is paid and doesn't allow free users to use it on deployed websites without payment.
+
 ---
 
 ## Tech Stack
