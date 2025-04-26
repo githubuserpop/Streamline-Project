@@ -1,6 +1,6 @@
 # Streamline-Project
 
-Personalized News Aggregator that allows a user to see news about relevant topics, and also make changes via a personalized news section that filters and shows news topics they want to see in a separate feed.
+A personalized news aggregator that allows users to view news about relevant topics and create a customized news section that filters and displays only the topics they're interested in.
 
 ---
 
@@ -9,7 +9,7 @@ Personalized News Aggregator that allows a user to see news about relevant topic
 - **Routing:** react-router-dom v6.x
 - **Styling:** CSS Modules / standard CSS
 - **Icons:** FontAwesome (via CDN in `index.html`)
-- **Build Tool:** (likely Create React App, Vite, or similar – update if different)
+- **Build Tool:** Create React App
 
 ## Features
 - Personalized news feed based on user-selected topics
@@ -18,7 +18,6 @@ Personalized News Aggregator that allows a user to see news about relevant topic
 - Dynamic routing for news sections
 - Clean, modern design with FontAwesome icons
 - Fast client-side navigation
-- (Add authentication, notifications, or other features if present)
 
 ## Design
 - Modern, user-friendly interface
@@ -26,25 +25,43 @@ Personalized News Aggregator that allows a user to see news about relevant topic
 - FontAwesome icons integrated via CDN for visual enhancement
 - Modular component structure for easy maintenance
 
-## Database
-- Currently, no backend database is integrated. News data is likely fetched from external APIs or mocked locally.
-- (Update this section if a backend/database is added, e.g., Firebase, MongoDB, etc.)
+## Project Setup
 
-## Getting Started
+### Prerequisites
+- Node.js (v14.x or higher)
+- npm (v6.x or higher)
+
+### Installation
 1. Clone the repository:
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/yourusername/Streamline-Project.git
    cd Streamline-Project
    ```
 2. Install dependencies:
    ```bash
    npm install
    ```
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-4. Open [http://localhost:3000](http://localhost:3000) to view the app.
+
+### Running the Application
+Start the development server:
+```bash
+npm start
+```
+The application will be available at [http://localhost:3000](http://localhost:3000)
+
+### Build for Production
+Create an optimized production build:
+```bash
+npm run build
+```
+
+## Known Issues and Troubleshooting
+- **Blank Screen Issue**: If you encounter a blank screen when running the development server, ensure you're using the correct React version (18.2.0) and react-router-dom version (v6.x). Check your package.json and update dependencies if needed.
+- **FontAwesome Icons Not Loading**: Ensure you have an internet connection as FontAwesome is loaded via CDN in the index.html file.
+
+## Configuration
+- The app currently uses hardcoded or mock data for news sources. To connect to real news APIs, update the API endpoints in the relevant service files.
+- Environment variables can be configured in a `.env` file (see `.env.example` if it exists).
 
 ## Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
@@ -53,4 +70,4 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 [MIT](LICENSE)
 
 ---
-Feel free to update this README with more details as the project evolves.
+Last updated: April 25, 2025
