@@ -105,7 +105,6 @@ function App() {
             <p>Error loading news: {error}</p>
           </div>
         )}
-        
         <Routes>
           <Route path="/" element={
             <div className="news-container">
